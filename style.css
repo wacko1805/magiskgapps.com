@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Tilt+Warp&display=swap');
+:root {
+    --onyx: #393e46ff;
+    --rose-red: #c33c54ff;
+    --tropical-indigo: #9088d4ff;
+    --lavender-blush: #ffeaecff;
+    --celadon: #b9d8c2ff;
+}
+* {
+    box-sizing: border-box;
+  }
+body {
+    width: 100vw; 
+    max-width: 127.78vh; 
+    margin: auto;
+    position: absolute;
+    top:0;bottom:0; /* vertical center */
+    left:0;right:0; /* horizontal center */
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+h3 {
+    color: var(--onyx);
+}
+header h1 {
+    font-family: 'Tilt Warp', cursive;
+    color: var(--onyx);
+    font-size: calc(2rem + 2vw);}
+
+.main-box {
+    background-color: var(--celadon);
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    display: inline-block;
+}
+
+.main-box-ads {
+    background-color: var(--celadon);
+    border-radius: 15px;
+    padding: 1px;
+    width: 100%;
+    display: inline-block;
+}
+.main-box-ads p {
+    text-align: center;
+}
+.main-box h2 {
+    color: var(--onyx);
+    padding-left: 15px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 32%;
+    margin: .6%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 15px;
+  }
+.column:hover{
+    box-shadow: 2px 2px 8px 0 rgba(0,0,0,.1);
+}
+  .column img {
+    width: 50%;
+    padding-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;  }
+
+    .column h3 {
+        text-align: center;
+        color: var(--onyx);
+    }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
+
+  ul {
+    color: var(--onyx);
+    font-weight: 500;
+  }
+
+  footer {
+    background-color: var(--celadon);
+    border-radius: 15px 15px 0 0;
+    padding: 10px;
+  }
+  table,tbody, th, td {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
