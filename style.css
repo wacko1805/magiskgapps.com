@@ -4,19 +4,19 @@
     --rose-red: #c33c54ff;
     --tropical-indigo: #9088d4ff;
     --lavender-blush: #ffeaecff;
-    --celadon: #b9d8c2ff;
+    --celadon: #726a95;
 }
 * {
     box-sizing: border-box;
   }
 body {
     width: 100vw; 
-    max-width: 127.78vh; 
+    max-width: 155.78vh; 
     margin: auto;
     position: absolute;
     top:0;bottom:0; /* vertical center */
     left:0;right:0; /* horizontal center */
-    font-family: 'Poppins', sans-serif;
+    font-family: Calibri, sans-serif;
     font-size: 16px;
 }
 h3 {
@@ -27,9 +27,13 @@ header h1 {
     color: var(--onyx);
     font-size: calc(2rem + 2vw);}
 
+    header h1 span {
+      color: #726a95;
+    }
+
 .main-box {
-    background-color: var(--celadon);
-    border-radius: 15px;
+    background-color: #47425D;
+    border-radius: 5px;
     padding: 20px;
     width: 100%;
     display: inline-block;
@@ -46,18 +50,32 @@ header h1 {
     text-align: center;
 }
 .main-box h2 {
-    color: var(--onyx);
+    color: white;
     padding-left: 15px;
+}
+
+
+.main-box-2 {
+  border-radius: 5px;
+  width: 100%;
+  display: inline-block;
+}
+
+.main-box-2 h2 {
+  background-color: #47425D;
+  padding: 20px;
+  border-radius: 5px;
+  color: white;
 }
 
 /* Create three equal columns that floats next to each other */
 .column {
     float: left;
-    width: 32%;
+    width: 23.7%;
     margin: .6%;
     padding: 10px;
     background-color: white;
-    border-radius: 15px;
+    border-radius: 5px;
   }
 .column:hover{
     box-shadow: 2px 2px 8px 0 rgba(0,0,0,.1);
@@ -81,6 +99,27 @@ header h1 {
     display: table;
     clear: both;
   }
+
+
+  .column-2 {
+    float: left;
+    width: 18.8%;
+    margin: .6%;
+    background-color: white;
+    border-radius: 5px;
+
+  }
+  .column-2 .shadow {
+    padding: 1px;
+
+  }
+.column-2:hover{
+}
+
+.column-2 h3 {
+  text-align: center;
+  color: #726a95;
+}
   
   /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 600px) {
@@ -92,6 +131,7 @@ header h1 {
   ul {
     color: var(--onyx);
     font-weight: 500;
+    padding: 10px;
   }
 
   footer {
