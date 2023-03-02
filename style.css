@@ -10,15 +10,16 @@
     box-sizing: border-box;
   }
 body {
-    width: 100vw; 
-    max-width: 155.78vh; 
-    margin: auto;
-    position: absolute;
-    top:0;bottom:0; /* vertical center */
-    left:0;right:0; /* horizontal center */
     font-family: Calibri, sans-serif;
     font-size: 16px;
+    padding-left: 15vw;
+    padding-right: 15vw;
 }
+@media screen and (max-width: 600px) {
+body {
+  padding-left: 0;
+  padding-right: 0;
+}}
 
 main {
 
@@ -144,7 +145,7 @@ header h1 {
   /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 600px) {
     .column {
-      width: 48.80756%;
+      width: 48%;
     }
   }
 
