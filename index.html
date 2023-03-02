@@ -14,7 +14,6 @@
     <header>
         <h1><span>Magisk</span>GApps</h1>
     </header>
-    <p class="sub">MagiskGApps is a modification of NikGApps that can be flashed in Magisk. It is built using a script that converts the NikGApps package into a MagiskGApps Package. MG can be installed temporarily, or change the pre-installed GApps package.</p>
 </main>
     <div class="main-box">
         <h2>Select Android Version</h2>
@@ -49,7 +48,11 @@
     </div>
 
     <br><br>
+    <button class="collapsible"><span>What is MagiskGApps?</span></button>
+<div class="content">
+    <p class="sub">MagiskGApps is a modification of NikGApps that can be flashed in Magisk. It is built using a script that converts the NikGApps package into a MagiskGApps Package. MG can be installed temporarily, or change the pre-installed GApps package.</p>
 
+    </div>
     <div class="main-box-ads" style="background-color: white;">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9222991553459658"
      crossorigin="anonymous"></script>
@@ -220,5 +223,22 @@
 </script>
     <footer>
     </footer>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } 
+          });
+        }
+        </script>
 </body>
 </html>
