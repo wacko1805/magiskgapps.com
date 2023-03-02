@@ -19,6 +19,17 @@ body {
     font-family: Calibri, sans-serif;
     font-size: 16px;
 }
+
+main {
+
+}
+
+@media screen and (max-width: 600px) {
+main {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+}
 h3 {
     color: var(--onyx);
 }
@@ -103,14 +114,23 @@ header h1 {
 
   .column-2 {
     float: left;
-    width: 18.8%;
+    width: 32.1%;
     margin: .6%;
     background-color: white;
     border-radius: 5px;
 
   }
-  .column-2 .shadow {
-    padding: 1px;
+
+  @media screen and (max-width: 600px) {
+    .column-2 {
+      width: 100%;
+    }
+
+  }
+
+  .column-2 ul {
+    padding-left: 70px;
+    padding-right: 70px;
 
   }
 .column-2:hover{
@@ -124,7 +144,7 @@ header h1 {
   /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
   @media screen and (max-width: 600px) {
     .column {
-      width: 100%;
+      width: 48.80756%;
     }
   }
 
