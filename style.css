@@ -220,3 +220,10 @@ header h1 {
     background-color: #f1f1f1;
     border-radius: 0 0 5px 5px;
   }
+
+  h1 {
+    font-family: 'Tilt Warp', cursive;
+    color: var(--onyx);
+    font-size: calc(2rem + 1.5vw);
+    padding-left: 5px;
+}
