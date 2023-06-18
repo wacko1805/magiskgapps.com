@@ -1,21 +1,10 @@
 const params = new URLSearchParams(window.location.search);
 const version = params.get('version');
-const rssUrl = "https://sourceforge.net/projects/magiskgapps/rss?path=/" + version;
+const rssUrl = "https://jacsam9.dreamhosters.com/php-cross-domain-proxy-master/proxy.php/https://sourceforge.net/projects/magiskgapps/rss?path=/" + version;
 const durl = "https://sourceforge.net/projects/magiskgapps/files/" + version;
 const outputEl = document.getElementById("output");
 const variantHeading = document.getElementById('variant');
 variantHeading.textContent = `${version}:`;
-
-fetch(rssUrl, {
-  headers: {
-    'Access-Control-Allow-Origin': 'https://magiskgapps.com/', // Replace with your domain
-    'Access-Control-Allow-Methods': 'GET'
-  }
-})
-  .then((response) => response.text())
-  .then((xmlString) => {
-    // Rest of your code...
-
 fetch(rssUrl)
   .then((response) => response.text())
   .then((xmlString) => {
@@ -74,8 +63,3 @@ fetch(rssUrl)
   .catch((error) => {
     console.error(error);
   });
-
-})
-.catch((error) => {
-  console.error(error);
-});
