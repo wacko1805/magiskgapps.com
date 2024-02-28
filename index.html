@@ -10,36 +10,61 @@
      crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="header">
+        <a href="../" class="logo">MagiskGApps</a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+          <li><a href="maker">MagiskGApps Maker</a></li>
+          <li><a href="#download">Download</a></li>
+          <li><a href="#apps">Apps Included</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+    </div>
+    <div style="padding-top: 70px;"></div>
     <main>
     <header>
-        <h1><span>Magisk</span>GApps</h1>
+        <h1><span class="one">Magisk</span>GApps</h1>
     </header>
-</main>
-    <div class="main-box">
+<div class="main-box">
+  <h2 id="#">Make your own MagiskGApps package</h2>
+  <p><b>How it works:</b>
+  <ul>
+    <li>Download your desired GApps package (currently, NikGApps is the only supported packages)</li>
+    <li>Head to the below link and upload the GApps file</li>
+    <li>Select your GApps package from the list</li>
+    <li>Wait for the file to process</li>
+    <li>Flash your custom MagiskGApps package</li>
+  </ul>
+  
+  </p>
+  </div>
+  <br><br>
+    <div id="download" class="main-box">
         <h2>Select Android Version</h2>
 
-        <a href="download.html?version=android-13-ALPHA">
+        <a href="https://sourceforge.net/projects/magiskgapps/files/android-13-ALPHA/">
             <div class="column">
                 <img class="icon"  src="imgs/Android_13_Developer_Preview_logo.svg">
                 <h3>Android 13</h3>
             </div>
             </a>
 
-            <a href="download.html?version=android-12L-ALPHA">
+            <a href="https://sourceforge.net/projects/magiskgapps/files/android-12L-ALPHA/">
                 <div class="column">
                     <img class="icon"  src="imgs/Android_12_Developer_Preview_logo.svg">
                     <h3>Android 12L</h3>
                 </div>
                 </a>
 
-                <a href="download.html?version=android-12-ALPHA">
+                <a href="https://sourceforge.net/projects/magiskgapps/files/android-12-ALPHA/">
                     <div class="column">
                         <img class="icon"  src="imgs/Android_12_Developer_Preview_logo.svg">
                         <h3>Android 12</h3>
                     </div>
                     </a>
 
-                    <a href="download.html?version=r">
+                    <a href="https://sourceforge.net/projects/magiskgapps/files/r/">
                         <div class="column">
                             <img class="icon" src="imgs/Android_11_Developer_Preview_logo.svg">
                             <h3>Android 11</h3>
@@ -71,7 +96,7 @@
 
     <br><br>
 
-    <div class="main-box-2">
+    <div id="apps" class="main-box-2">
         <h1 style="text-align: center; padding-left: 0;">Apps Included</h1>
 
         <div class="column-2">
@@ -213,7 +238,7 @@
     </div>
     <br><br>
 
-    <h1>FAQ</h1>
+    <h1 id="faq">FAQ</h1>
 
     <button class="collapsible"><span>When I uninstall MagiskGApps, all the apps are still there.</span></button>
     <div class="content">
@@ -233,7 +258,7 @@
 
     <br>
 
-    <button class="collapsible"><span>Why is Android 10 not supported?.</span></button>
+    <button class="collapsible"><span>Why is Android 10 not supported?</span></button>
     <div class="content">
         <p class="sub">
             MagiskGApps was started when Android 11 was released, so there was no personal need for Android 10 support. With enough support, I may release an Android 10 version in the future.
@@ -273,5 +298,7 @@
           });
         }
         </script>
+        </main>
+
 </body>
 </html>

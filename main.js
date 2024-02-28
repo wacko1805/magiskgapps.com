@@ -1,15 +1,17 @@
 const params = new URLSearchParams(window.location.search);
 const version = params.get('version');
-const rssUrl = "https://jacsam9.dreamhosters.com/php-cross-domain-proxy-master/proxy.php/https://sourceforge.net/projects/magiskgapps/rss?path=/" + version;
+const proxyUrl = "http://localhost:3000/proxy?version=" + version;
 const durl = "https://sourceforge.net/projects/magiskgapps/files/" + version;
 const outputEl = document.getElementById("output");
 const variantHeading = document.getElementById('variant');
 variantHeading.textContent = `${version}:`;
-fetch(rssUrl)
+
+fetch(proxyUrl)
   .then((response) => response.text())
   .then((xmlString) => {
     const parser = new DOMParser();
     const xml = parser.parseFromString(xmlString, "text/xml");
+    
     const items = xml.querySelectorAll("item");
     
     const files = {};
