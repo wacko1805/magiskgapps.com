@@ -49,6 +49,19 @@
         <p id="info"></p>
     </div>
 
+    <button class="collapsible"><span>How to use MagiskGApps Maker</span></button>
+    <div class="content">
+        <p class="sub">
+            <b>How it works:</b>
+                <ul>
+                  <li>Download your desired GApps package (currently, NikGApps is the only supported packages)</li>
+                  <li>Head to the below link and upload the GApps file</li>
+                  <li>Select your GApps package from the list</li>
+                  <li>Wait for the file to process</li>
+                  <li>Flash your custom MagiskGApps package</li>
+                </ul>
+        </p>
+    </div>
     </div>
 
     <script src="script.js"></script>
@@ -112,5 +125,21 @@
 </script>
         <p class="ads" >Advertisment</p>
     </main>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } 
+          });
+        }
+        </script>
 </body>
 </html>
