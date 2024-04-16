@@ -1,4 +1,3 @@
-document.getElementById("info").innerHTML += '<p><b>NikGApps Selcted</b></p><br>';
 $('#extractButton').click(function() {
     const fileInput = document.getElementById('zipFileInput');
     const files = fileInput.files;
