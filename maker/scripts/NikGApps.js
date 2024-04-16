@@ -1,3 +1,4 @@
+document.getElementById("info").innerHTML += '<p><b>NikGApps Selcted</b></p><br>';
 $('#extractButton').click(function() {
     const fileInput = document.getElementById('zipFileInput');
     const files = fileInput.files;
@@ -12,13 +13,13 @@ $('#extractButton').click(function() {
     let ogZipTitle = file.name; // Store the name of the original zip file
     reader.onload = function(e) {
         console.log('File loaded. Extracting...');
-        document.getElementById("info").innerHTML = "File loaded. Extracting...";
+        document.getElementById("info").innerHTML += "File loaded. Extracting...<br>";
         const zip = new JSZip();
         zip.loadAsync(e.target.result).then(function(zipFiles) {
             const promises = [];
             zip.forEach(function(relativePath, zipEntry) {
                 console.log('Processing file:', relativePath);
-                document.getElementById("info").innerHTML = 'Processing file...';
+                document.getElementById("info").innerHTML += '<b>Processing file: </b>' + relativePath + '<br>';
                 if (relativePath.endsWith('installer.sh') || relativePath.endsWith('uninstaller.sh')) {
                     console.log('Skipping file:', relativePath);
                     return; // Skip installer.sh and uninstaller.sh files
@@ -31,7 +32,7 @@ $('#extractButton').click(function() {
                                 const parts = subRelativePath.split('___').filter(Boolean);
                                 const targetPath = ['system', ...parts].join('/');
                                 console.log('Extracting to:', targetPath);
-                                document.getElementById("info").innerHTML = 'Extracting files...';
+                                document.getElementById("info").innerHTML += '<b>Extracting File: </b>' + targetPath + '<br>';
                                 subZipEntry.async('blob').then(function(blob) {
                                     newZip.file(targetPath, blob);
                                     resolve();
@@ -42,7 +43,7 @@ $('#extractButton').click(function() {
                         const parts = relativePath.split('___').filter(Boolean);
                         const targetPath = ['system', ...parts].join('/');
                         console.log('Extracting to:', targetPath);
-                        document.getElementById("info").innerHTML = 'creating new zip file...';
+                        document.getElementById("info").innerHTML += 'Creating new zip file...<br>';
                         zipEntry.async('blob').then(function(blob) {
                             newZip.file(targetPath, blob);
                             resolve();
@@ -69,10 +70,10 @@ $('#extractButton').click(function() {
 
             Promise.all(promises).then(function() {
                 console.log('All files extracted. Creating new zip file...');
-                document.getElementById("info").innerHTML = 'All files extracted. Creating new zip file...(This may take up to 5 minutes)';
+                document.getElementById("info").innerHTML += '<h3>All files extracted. Creating new zip file...(This may take up to 5 minutes)<h3><br>';
                 newZip.generateAsync({type:'blob'}).then(function(blob) {
                     console.log('New zip file created. Downloading...');
-                    document.getElementById("info").innerHTML = 'New zip file created. Downloading...';
+                    document.getElementById("info").innerHTML += 'New zip file created. Downloading...<br>';
                     const url = window.URL.createObjectURL(blob);
                     const a = document.createElement('a');
                     a.href = url;
@@ -82,7 +83,7 @@ $('#extractButton').click(function() {
                     window.URL.revokeObjectURL(url);
                     document.body.removeChild(a);
                     console.log('Download complete.');
-                    document.getElementById("info").innerHTML = 'Download complete.';
+                    document.getElementById("info").innerHTML += 'Download complete.<br>';
                 });
             });
         });

@@ -1,11 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Tilt+Warp&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 :root {
     --onyx: #393e46ff;
     --rose-red: #c33c54ff;
     --tropical-indigo: #9088d4ff;
-    --lavender-blush: #ffeaecff;
+    --lavender-blush: #B5C18E;
     --celadon: #726a95;
+}
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D9D9D9;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 * {
     box-sizing: border-box;
@@ -13,9 +33,13 @@
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
+  margin: 0;
+  padding: 0;
 }
 
-
+html {
+  scroll-behavior: smooth;
+}
 main {
   padding-left: 15vw;
   padding-right: 15vw;
@@ -341,17 +365,21 @@ input[type=button], input[type=submit], input[type=reset] {
   margin: 4px 2px;
   cursor: pointer;
 }
+.full-width {
+  width: 100%;
 
+}
 input[type=file] {
   width: 100%;
 }
 
 input::file-selector-button {
+  background-color: var(--celadon);
   font-weight: bold;
   border: none;
   border-radius: 5px;
   padding: 12px 30px;
-  color: #3c454c;
+  color: white;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   transition: 0.2s;
@@ -375,12 +403,27 @@ button:hover {
   background-color: var(--tropical-indigo);
   color: var(--lavender-blush);
 }
-
-.processing p {
-  font-size: 30px;
-  color: #3c454c;
+.processing {
+  margin-top: 2vh;
+  position: relative;
+  border: 1px solid #3c454c;
+  border-radius: 3px;
+  height: 23vh;
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x:scroll;
 }
-
+.processing p {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: #3c454c;
+  position: absolute;
+  bottom: -10px;
+  left: 5px;
+}
+.processing .red {
+  color: red;
+}
 
 
 .header {
@@ -550,3 +593,53 @@ button:hover {
   
   
   /* end header */
+
+  .header-box{
+    height: 96vh;
+    background-color: #EEF0E5;
+    transition: .3s ease-in-out;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 2vh;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    border-radius: 5px;
+    margin-top: 2vh;
+  }
+
+  .sticky {
+  }
+
+
+  .heading-text {
+    padding-bottom: 1vh;
+  }
+
+  .heading-text h1{
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+  .heading-text h1 .one{
+    color: var(--celadon);
+  }
+  .heading-text .maker .one {
+    margin-top: -21px;
+    font-size: 30px;
+    font-weight: 800;
+    padding-left: 20.5px;
+    color: #EEF0E5;
+    position: absolute;
+  }
+
+  .heading-text .maker .two {
+    margin-top: -20px;
+    font-size: 30px;
+    font-weight: 800;
+    padding-left: 20px;
+    color: var(--onyx);
+    position: absolute;
+  }
+
+  .maker {
+    position: relative;
+  }

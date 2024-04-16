@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MagiskGApps Maker</title>
+    <title>MagiskGApps</title>
     <link rel="stylesheet" href="../style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.0/jszip.min.js"></script>
@@ -13,110 +14,114 @@
      <meta name="google-adsense-account" content="ca-pub-9222991553459658">
 </head>
 <body>
-    <div class="header">
-        <a href="../" class="logo">MagiskGApps</a>
-        <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-        <ul class="menu">
-          <li><a href="/">Home</a></li>
-          <li><a href="/index.html#download">Download</a></li>
-          <li><a href="/index.html#apps">Apps Included</a></li>
-          <li><a href="/index.html#faq">FAQ</a></li>
-        </ul>
-    </div>
-    <div style="padding-top: 70px;"></div>
-    <main>
-        <header>
-            <h1><span class="one">Magisk</span>GApps<span class="two">Maker beta</span></h1>
-        </header>
-    <div class="form">
-        <label for="zipFileInput" ><p>Upload your GApps package</p></label>
-        <br>
-        <input type="file" id="zipFileInput" accept=".zip">
-
-    <div class='inputGroup'>
-        <input id='NikGapps' type='radio' name='GappsType' value='NikGapps'>
-        <label for='NikGapps'>NikGapps</label>
-    </div>
-
-    <div class='inputGroup'>
-        <input id='other' type='radio' name='GappsType' value='other' disabled>
-        <label for='other'>More Options coming soon!</label>
-    </div>
-
-    <button id="extractButton">Generate MagiskGApps package</button>
-
-
-    <div class="processing">
-        <p id="info"></p>
-    </div>
-
-    <button class="collapsible"><span>How to use MagiskGApps Maker</span></button>
-    <div class="content">
-        <p class="sub">
-            <b>How it works:</b>
-                <ul>
-                  <li>Download your desired GApps package (currently, NikGApps is the only supported packages)</li>
-                  <li>Head to the below link and upload the GApps file</li>
-                  <li>Select your GApps package from the list</li>
-                  <li>Wait for the file to process</li>
-                  <li>Flash your custom MagiskGApps package</li>
-                </ul>
-        </p>
-    </div>
-    </div>
-
-    <script src="script.js"></script>
-
-    <h1 style="text-align: center; padding-left: 0;">Want to download pre-made older versions?</h1>
-
-    <div class="main-box">
-        <h2>Select Android Version</h2>
-
-        <a href="https://sourceforge.net/projects/magiskgapps/files/android-13-ALPHA/">
-            <div class="column">
-                <img class="icon"  src="/imgs/Android_13_Developer_Preview_logo.svg">
-                <h3>Android 13</h3>
+        <div id="mainheaderbox" class="header-box" >
+            <div class="heading-text">
+            <h1><span class="one">Magisk</span>GApps</h1>
+            <div class="maker">
+            <p class="one">Maker</p>
+            <p class="two">Maker</p>
             </div>
-            </a>
-
-            <a href="https://sourceforge.net/projects/magiskgapps/files/android-12L-ALPHA/">
-                <div class="column">
-                    <img class="icon"  src="/imgs/Android_12_Developer_Preview_logo.svg">
-                    <h3>Android 12L</h3>
-                </div>
-                </a>
-
-                <a href="https://sourceforge.net/projects/magiskgapps/files/android-12-ALPHA/">
-                    <div class="column">
-                        <img class="icon"  src="/imgs/Android_12_Developer_Preview_logo.svg">
-                        <h3>Android 12</h3>
-                    </div>
-                    </a>
-
-                    <a href="https://sourceforge.net/projects/magiskgapps/files/r/">
-                        <div class="column">
-                            <img class="icon" src="/imgs/Android_11_Developer_Preview_logo.svg">
-                            <h3>Android 11</h3>
-                        </div>
-                        </a>
-    </div>
-    </main>
-    <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
+            </div>
+            <div class="form">
+              <br>
+              <p>Select your GApps file</p>
+              <input type="file" id="zipFileInput" accept=".zip">
+              <p>Choose your GApps type</p>
+          <div class='inputGroup'>
+              <input id='NikGapps' type='radio' name='GappsType' value='NikGapps'>
+              <label for='NikGapps'>NikGapps</label>
+          </div>
+      
+          <div class='inputGroup'>
+              <input id='MindTheGApps' type='radio' name='GappsType' value='MindTheGApps'>
+              <label for='MindTheGApps'>MindTheGApps</label>
+          </div>
+      
+          <button id="extractButton" class="full-width">Generate MagiskGApps package</button>
+      
+          <p>Console:</p>
+          <div class="processing">
+              <p id="info"></p>
+              
+          </div>
+            </div>
+        </div>
         
-        for (i = 0; i < coll.length; i++) {
-          coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var content = this.nextElementSibling;
-            if (content.style.maxHeight){
-              content.style.maxHeight = null;
-            } else {
-              content.style.maxHeight = content.scrollHeight + "px";
-            } 
-          });
+        </div>
+        <script>
+            // Function to load the corresponding JavaScript file based on the selected radio button
+            function loadScript(fileName) {
+                var script = document.createElement('script');
+                script.src = 'scripts/' + fileName + '.js';
+                document.head.appendChild(script);
+            }
+        
+            // Event listener for radio button changes
+            document.querySelectorAll('input[name="GappsType"]').forEach(function (elem) {
+                elem.addEventListener("change", function () {
+                    if (this.value === 'NikGapps') {
+                        loadScript('NikGApps');
+                    } else if (this.value === 'MindTheGApps') {
+                        loadScript('MindTheGApps');
+                    }
+                });
+            });
+        </script>
+        
+        <main>
+
+          <h1 style="text-align: center; padding-left: 0;">Want to download pre-made older versions?</h1>
+
+          <div class="main-box">
+              <h2>Select Android Version</h2>
+      
+              <a href="https://sourceforge.net/projects/magiskgapps/files/android-13-ALPHA/">
+                  <div class="column">
+                      <img class="icon"  src="/imgs/Android_13_Developer_Preview_logo.svg">
+                      <h3>Android 13</h3>
+                  </div>
+                  </a>
+      
+                  <a href="https://sourceforge.net/projects/magiskgapps/files/android-12L-ALPHA/">
+                      <div class="column">
+                          <img class="icon"  src="/imgs/Android_12_Developer_Preview_logo.svg">
+                          <h3>Android 12L</h3>
+                      </div>
+                      </a>
+      
+                      <a href="https://sourceforge.net/projects/magiskgapps/files/android-12-ALPHA/">
+                          <div class="column">
+                              <img class="icon"  src="/imgs/Android_12_Developer_Preview_logo.svg">
+                              <h3>Android 12</h3>
+                          </div>
+                          </a>
+      
+                          <a href="https://sourceforge.net/projects/magiskgapps/files/r/">
+                              <div class="column">
+                                  <img class="icon" src="/imgs/Android_11_Developer_Preview_logo.svg">
+                                  <h3>Android 11</h3>
+                              </div>
+                              </a>
+          </div>
+          </main>
+          <br><br>
+
+
+
+    <script>
+        window.onscroll = function() {myFunction()};
+        
+        var header = document.getElementById("mainheaderbox");
+        var sticky = header.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
         }
         </script>
-</body>
-</html>
+        </main>
+        </body>
+        </html>
