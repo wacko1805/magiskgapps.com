@@ -643,3 +643,15 @@ button:hover {
   .maker {
     position: relative;
   }
+
+  .hlink {
+    color: var(--lavender-blush);
+    text-decoration: none;
+  }
+
+  .hlink:hover {
+    color: var(--rose-red);
+  }
+  .notif {
+    color: white;
+  }
