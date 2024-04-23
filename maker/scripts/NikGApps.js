@@ -1,3 +1,4 @@
+// NikGApps Script
 $('#extractButton').click(function() {
     const fileInput = document.getElementById('zipFileInput');
     const files = fileInput.files;
