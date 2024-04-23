@@ -1,4 +1,4 @@
-![alt text](https://raw.githubusercontent.com/wacko1805/MagiskGapps/assets/images/magisk-3.png "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/wacko1805/wacko1805/main/MGM-LOGO-TEXT.png "Logo Title Text 1")
 # MagiskGApps Maker Beta
 ## Original MagiskGApps will be replaced by the MagiskGApps Maker (MGM). Pre-made varients will not be updated!
 MagiskGApps maker is an online tool to generate MagiskGApps packages from regular GApps files.
