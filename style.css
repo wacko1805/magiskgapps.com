@@ -409,7 +409,7 @@ button:hover {
   border: 1px solid #3c454c;
   border-radius: 3px;
   height: 23vh;
-  overflow: hidden;
+  overflow: auto;
   overflow-y: hidden;
   overflow-x:scroll;
 }

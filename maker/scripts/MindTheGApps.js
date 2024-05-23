@@ -1,9 +1,13 @@
 // MindTheGApps Script
 $('#extractButton').click(function() {
+    console.log('MindTheGApps Selected.');
+    document.getElementById("info").innerHTML += "MindTheGApps Selected. <br>";
+
     const fileInput = document.getElementById('zipFileInput');
     const files = fileInput.files;
     if (files.length === 0) {
-        alert('Please select a file to extract.');
+        console.log('Please select a file to extract.');
+        document.getElementById("info").innerHTML += "<b class='red'>Please select a file to extract!</p><br>";
         return;
     }
     
@@ -31,25 +35,42 @@ $('#extractButton').click(function() {
                 }
             });
             
-            // Add contents of the 'template' folder to the new zip file
-            const templateFolder = {
-                'customize.sh': 'SGVsbG8gV29ybGQhCg==', 
-                'module.prop': 'VGhpcyBpcyBhIHRlc3QK', 
-                'uninstall.sh': 'VGhpcyBpcyBhIHRlc3QK', 
-                'META-INF/update-binary': 'VGhpcyBpcyBhIHRlc3QK', 
-                'META-INF/updater-script': 'VGhpcyBpcyBhIHRlc3QK', 
-                'common/functions.sh': 'VGhpcyBpcyBhIHRlc3QK', 
-                'common/install.sh': 'VGhpcyBpcyBhIHRlc3QK', 
-                // Add more files as needed
-            };
-            Object.keys(templateFolder).forEach(fileName => {
-                const fileContent = templateFolder[fileName];
-                newZip.file(fileName, atob(fileContent), { binary: true });
-            });
+// Add contents of the 'template' folder to the new zip file
+const templateFolder = {
+    'customize.sh': 'customize.sh', 
+    'module.prop': 'module.prop', 
+    'uninstall.sh': 'uninstall.sh', 
+    'META-INF/update-binary': 'META-INF/com/google/android/update-binary', 
+    'META-INF/updater-script': 'META-INF/com/google/android/updater-script', 
+    'common/functions.sh': 'common/functions.sh', 
+    'common/install.sh': 'common/install.sh', 
+    // Add more files as needed
+};
+
+Object.values(templateFolder).forEach(fileName => {
+    // Assuming the files are in the same directory as your HTML file
+    const filePath = './scripts/template/' + fileName;
+
+    fetch(filePath)
+        .then(response => response.blob())
+        .then(blob => {
+            // Convert blob to array buffer
+            return new Response(blob).arrayBuffer();
+        })
+        .then(arrayBuffer => {
+            // Create a Uint8Array from array buffer
+            const uint8Array = new Uint8Array(arrayBuffer);
+            // Add file to zip
+            newZip.file(fileName, uint8Array, { binary: true });
+        })
+        .catch(error => {
+            console.error(`Error loading file ${fileName}: ${error}`);
+        });
+});
 
             Promise.all(promises).then(function() {
                 console.log('All files extracted. Creating new zip file...');
-                document.getElementById("info").innerHTML += '<h3>All files extracted. Creating new zip file...(This may take up to 5 minutes)<h3><br>';
+                document.getElementById("info").innerHTML += '<h3>All files extracted. Creating new zip file...<br>This may take up to 5 minutes depending on the GApps package size, browser and device.<h3><br>';
                 newZip.generateAsync({type:'blob'}).then(function(blob) {
                     console.log('New zip file created. Downloading...');
                     document.getElementById("info").innerHTML += 'New zip file created. Downloading...<br>';
