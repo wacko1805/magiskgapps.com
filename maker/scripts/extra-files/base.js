@@ -1,8 +1,8 @@
-// NikGApps Script
+// BASE Script
 
 $('#extractButton').click(function() {
-    console.log('NikGApps Selected.');
-    document.getElementById("info").innerHTML += "NikGApps Selected. <br>";
+    console.log('BASE Selected.');
+    document.getElementById("info").innerHTML += "BASE Selected. <br>";
 
     const fileInput = document.getElementById('zipFileInput');
     const files = fileInput.files;
@@ -17,46 +17,7 @@ $('#extractButton').click(function() {
     const newZip = new JSZip(); // Define newZip here
     let ogZipTitle = file.name; // Store the name of the original zip file
     let ogZipTitleStripped = ogZipTitle.replace('.zip','')
-    reader.onload = function(e) {
-        console.log('File loaded. Extracting...');
-        document.getElementById("info").innerHTML += "File loaded. Extracting...<br>";
-        const zip = new JSZip();
-        zip.loadAsync(e.target.result).then(function(zipFiles) {
-            const promises = [];
-            zip.forEach(function(relativePath, zipEntry) {
-                console.log('Processing file:', relativePath);
-                document.getElementById("info").innerHTML += '<b>Processing file: </b>' + relativePath + '<br>';
-                if (relativePath.endsWith('installer.sh') || relativePath.endsWith('uninstaller.sh')) {
-                    console.log('Skipping file:', relativePath);
-                    return; // Skip installer.sh and uninstaller.sh files
-                }
-                promises.push(new Promise((resolve, reject) => {
-                    if (relativePath.startsWith('AppSet/') && relativePath.endsWith('.zip')) {
-                        const subZip = new JSZip();
-                        subZip.loadAsync(zipEntry.async('blob')).then(function(subZipFiles) {
-                            subZip.forEach(function(subRelativePath, subZipEntry) {
-                                const parts = subRelativePath.split('___').filter(Boolean);
-                                const targetPath = ['system', ...parts].join('/');
-                                console.log('Extracting to:', targetPath);
-                                document.getElementById("info").innerHTML += '<b>Extracting File: </b>' + targetPath + '<br>';
-                                subZipEntry.async('blob').then(function(blob) {
-                                    newZip.file(targetPath, blob);
-                                    resolve();
-                                });
-                            });
-                        });
-                    } else {
-                        const parts = relativePath.split('___').filter(Boolean);
-                        const targetPath = ['system', ...parts].join('/');
-                        console.log('Extracting to:', targetPath);
-                        document.getElementById("info").innerHTML += 'Creating new zip file...<br>';
-                        zipEntry.async('blob').then(function(blob) {
-                            newZip.file(targetPath, blob);
-                            resolve();
-                        });
-                    }
-                }));
-            });
+    
             
 // Add contents of the 'template' folder to the new zip file
 const templateFolder = {
@@ -91,15 +52,16 @@ Object.values(templateFolder).forEach(fileName => {
         });
 });
 
-            // making module.prop
+// making module.prop
+
+            // Add contents of the 'template' folder to the new zip file
             const customFile = {
-                'module.prop': 'id=MGM \n name=MGM '+ ogZipTitleStripped +' Modified by MagiskGApps \n version=v0.1 \n versionCode=17 \n author=Wacko1805 \n description=MagiskGApps modified version of '+ ogZipTitleStripped +' @ MagiskGApps.com/maker',
+                'module.prop': 'id=MGM \n name=MGM '+ ogZipTitleStripped +' Modified by MagiskGApps \n version=v0.1 \n versionCode=17 \n author=Wacko1805 \n description=MagiskGApps modified version of '+ ogZipTitleStripped +' @ MagiskGApps.com/maker',                 // Add more files as needed
             };
             Object.keys(customFile).forEach(fileName => {
                 const fileContent = customFile[fileName];
                 newZip.file(fileName, fileContent, { binary: true });
             });
-
 
             Promise.all(promises).then(function() {
                 console.log('All files extracted. Creating new zip file...');

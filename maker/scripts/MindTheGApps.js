@@ -15,6 +15,7 @@ $('#extractButton').click(function() {
     const reader = new FileReader();
     const newZip = new JSZip();
     let ogZipTitle = file.name;
+    let ogZipTitleStripped = ogZipTitle.replace('.zip','')
     reader.onload = function(e) {
         console.log('File loaded. Extracting...');
         document.getElementById("info").innerHTML += "File loaded. Extracting...<br>";
@@ -38,7 +39,6 @@ $('#extractButton').click(function() {
 // Add contents of the 'template' folder to the new zip file
 const templateFolder = {
     'customize.sh': 'customize.sh', 
-    'module.prop': 'module.prop', 
     'uninstall.sh': 'uninstall.sh', 
     'META-INF/update-binary': 'META-INF/com/google/android/update-binary', 
     'META-INF/updater-script': 'META-INF/com/google/android/updater-script', 
@@ -65,9 +65,18 @@ Object.values(templateFolder).forEach(fileName => {
         })
         .catch(error => {
             console.error(`Error loading file ${fileName}: ${error}`);
+            document.getElementById("info").innerHTML += '<b class="red">Error loading file ' + fileName + ' : ' + error + '<b><br>';
         });
 });
 
+        // making module.prop
+        const customFile = {
+            'module.prop': 'id=MGM \n name=MGM '+ ogZipTitleStripped +' Modified by MagiskGApps \n version=v0.1 \n versionCode=17 \n author=Wacko1805 \n description=MagiskGApps modified version of '+ ogZipTitleStripped +' @ MagiskGApps.com/maker',
+        };
+        Object.keys(customFile).forEach(fileName => {
+            const fileContent = customFile[fileName];
+            newZip.file(fileName, fileContent, { binary: true });
+        });
             Promise.all(promises).then(function() {
                 console.log('All files extracted. Creating new zip file...');
                 document.getElementById("info").innerHTML += '<h3>All files extracted. Creating new zip file...<br>This may take up to 5 minutes depending on the GApps package size, browser and device.<h3><br>';
@@ -83,7 +92,7 @@ Object.values(templateFolder).forEach(fileName => {
                     window.URL.revokeObjectURL(url);
                     document.body.removeChild(a);
                     console.log('Download complete.');
-                    document.getElementById("info").innerHTML += 'Download complete.<br>';
+                    document.getElementById("info").innerHTML += 'Zip file made. File should download shortly!<br>';
                 });
             });
         });
