@@ -148,9 +148,13 @@ mount_mirrors() {
 
 # Credits
 ui_print "**************************************"
+ui_print "*    MagiskGApps Maker Installer     *"
+ui_print "*         @ MagiskGApps.com          *"
+ui_print "*              Based on              *"
 ui_print "*   MMT Extended by Zackptg5 @ XDA   *"
 ui_print "**************************************"
 ui_print " "
+
 
 # Check for min/max api version
 [ -z $MINAPI ] || { [ $API -lt $MINAPI ] && abort "! Your system API of $API is less than the minimum api of $MINAPI! Aborting!"; }
@@ -209,6 +213,14 @@ fi
 if ! $BOOTMODE; then
   ui_print "- Only uninstall is supported in recovery"
   ui_print "  Uninstalling!"
+  ui_print "  Please not that any Google apps that "
+  ui_print "  have been updated will not uninstall "
+  ui_print "  automatically!"
+  ui_print "  They will need to be able to be "
+  ui_print "  manually uninstalled!"
+  ui_print "  "
+
+
   touch $MODPATH/remove
   [ -s $INFO ] && install_script $MODPATH/uninstall.sh || rm -f $INFO $MODPATH/uninstall.sh
   recovery_cleanup
@@ -252,11 +264,15 @@ if [ -f $INFO ]; then
 fi
 
 ### Install
-ui_print "- Installing"
+ui_print "- Installing Custom MagiskGApps"
 
 [ -f "$MODPATH/common/install.sh" ] && . $MODPATH/common/install.sh
 
-ui_print "   Installing for $ARCH SDK $API device..."
+ui_print "   Installing for $ARCH SDK $API device... "
+ui_print "   Please ensure that you have modified the"
+ui_print "   correct GApps package for the above     "
+ui_print "   android version!                        "
+
 # Remove comments from files and place them, add blank line to end if not already present
 for i in $(find $MODPATH -type f -name "*.sh" -o -name "*.prop" -o -name "*.rule"); do
   [ -f $i ] && { sed -i -e "/^#/d" -e "/^ *$/d" $i; [ "$(tail -1 $i)" ] && echo "" >> $i; } || continue
