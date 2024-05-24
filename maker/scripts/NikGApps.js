@@ -62,8 +62,8 @@ $('#extractButton').click(function() {
 const templateFolder = {
     'customize.sh': 'customize.sh', 
     'uninstall.sh': 'uninstall.sh', 
-    'META-INF/update-binary': 'META-INF/com/google/android/update-binary', 
-    'META-INF/updater-script': 'META-INF/com/google/android/updater-script', 
+    'META-INF/com/google/android/update-binary': 'META-INF/com/google/android/update-binary', 
+    'META-INF/com/google/android/update-binary': 'META-INF/com/google/android/update-binary', 
     'common/functions.sh': 'common/functions.sh', 
     'common/install.sh': 'common/install.sh', 
     // Add more files as needed
