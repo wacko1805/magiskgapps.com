@@ -25,6 +25,12 @@ $('#extractButton').click(function() {
             zip.forEach(function(relativePath, zipEntry) {
                 console.log('Processing file:', relativePath);
                 document.getElementById("info").innerHTML += '<b>Processing file: </b>' + relativePath + '<br>';
+
+                // Ensure only files from the AppSet folder are processed
+                if (!relativePath.startsWith('system/')) {
+                    console.log('Skipping file outside main system folder:', relativePath);
+                    return; // Skip files not in the AppSet folder
+                }
                 if (relativePath.startsWith('system/')) {
                     // Extracting files from the 'system' folder to maintain original structure
                     const targetPath = 'system/' + relativePath.split('system/')[1];
@@ -41,7 +47,7 @@ const templateFolder = {
     'customize.sh': 'customize.sh', 
     'uninstall.sh': 'uninstall.sh', 
     'META-INF/com/google/android/update-binary': 'META-INF/com/google/android/update-binary', 
-    'META-INF/com/google/android/update-binary': 'META-INF/com/google/android/update-binary', 
+    'META-INF/com/google/android/updater-script': 'META-INF/com/google/android/updater-script', 
     'common/functions.sh': 'common/functions.sh', 
     'common/install.sh': 'common/install.sh', 
     // Add more files as needed
@@ -71,7 +77,7 @@ Object.values(templateFolder).forEach(fileName => {
 
         // making module.prop
         const customFile = {
-            'module.prop': 'id=MGM \n name=MGM '+ ogZipTitleStripped +' Modified by MagiskGApps \n version=v0.1 \n versionCode=17 \n author=Wacko1805 \n description=MagiskGApps modified version of '+ ogZipTitleStripped +' @ MagiskGApps.com/maker',
+            'module.prop': 'id=MGM\nname=MGM '+ ogZipTitleStripped +' Modified by MagiskGApps\nversion=v0.1\nversionCode=17\nauthor=Wacko1805\ndescription=MagiskGApps modified version of '+ ogZipTitleStripped +' @ MagiskGApps.com/maker',
         };
         Object.keys(customFile).forEach(fileName => {
             const fileContent = customFile[fileName];
