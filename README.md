@@ -15,5 +15,5 @@ MagiskGApps maker is an online tool to generate MagiskGApps packages from regula
 - [x] Create a custom module.prop and install files using the original file names
 - [ ] potentially create an app to flash directly
 ## Known Issues:
-- Will process zip through both NikGApps and MindTheGApps files if one radio button is selected, and then the other, causeing timeout error
-- NikGApps script leaves all files not needed for MagiskGApps functionality in the zip file
+- [ ] Will process zip through both NikGApps and MindTheGApps files if one radio button is selected, and then the other, causeing timeout error
+- [x] NikGApps script leaves all files not needed for MagiskGApps functionality in the zip file
