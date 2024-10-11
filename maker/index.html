@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MagiskGApps</title>
-    <link rel="stylesheet" href="../style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.0/jszip.min.js"></script>
-     <meta name="description" content="MagiskGapps Maker, convert a normal GApps packing into a MagiskGApps package!">
-     <meta name="keywords" content="Magisk, MagiskGApps, GApps, Google Apps, Android apps, android root, root, NikGApps, Magisk Gapps">
-     <meta name="author" content="Wacko1805">
-     <meta name="google-adsense-account" content="ca-pub-9222991553459658">
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/jszip.min.js"></script>
+    <meta name="description" content="MagiskGapps Maker, convert a normal GApps packing into a MagiskGApps package!">
+    <meta name="keywords" content="Magisk, MagiskGApps, GApps, Google Apps, Android apps, android root, root, NikGApps, Magisk Gapps">
+    <meta name="author" content="Wacko1805">
+    <meta name="google-adsense-account" content="ca-pub-9222991553459658">
 </head>
 <body>
 
@@ -70,52 +70,35 @@
                     </p>
                 </div>
             <hr>
-              <p>Select your GApps file</p>
+            <p>Select your GApps file</p>
+
               <input type="file" id="zipFileInput" accept=".zip" (change)="getFile($event)">
-              <p>Choose your GApps type</p>
-          <div class='inputGroup'>
-              <input id='NikGapps' type='radio' name='GappsType' value='NikGapps'>
-              <label for='NikGapps'>NikGapps</label>
-          </div>
-      
-          <div class='inputGroup'>
-              <input id='MindTheGApps' type='radio' name='GappsType' value='MindTheGApps'>
-              <label for='MindTheGApps'>MindTheGApps</label>
-          </div>
-      
-          <button id="extractButton" class="full-width">Generate MagiskGApps package</button>
-      
-          <p>Console:</p>
+            
+            <p>Choose your GApps type</p>
 
-          <div class="processing">
-            <!--  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p> -->
-              <p id="info"></p>
-          </div>
-          <br>
-        </div>
-        </div>
-        
-        </div>
-        <script>
-            // Function to load the corresponding JavaScript file based on the selected radio button
-            function loadScript(fileName) {
-                var script = document.createElement('script');
-                script.src = 'scripts/' + fileName + '.js';
-                document.head.appendChild(script);
-            }
-        
-            // Event listener for radio button changes
-            document.querySelectorAll('input[name="GappsType"]').forEach(function (elem) {
-                elem.addEventListener("change", function () {
-                    if (this.value === 'NikGapps') {
-                        loadScript('NikGApps');
+                <div class='inputGroup'>
+                    <input id='NikGapps' type='radio' name='GappsType' value='NikGapps'>
+                    <label for='NikGapps'>NikGapps</label>
+                </div>
+      
+                <div class='inputGroup'>
+                    <input id='MindTheGApps' type='radio' name='GappsType' value='MindTheGApps'>
+                    <label for='MindTheGApps'>MindTheGApps</label>
+                </div>
+      
+                <button id="extractButton" class="full-width">Generate MagiskGApps package</button>
+      
+            <p>Console:</p>
 
-                    } else if (this.value === 'MindTheGApps') {
-                        loadScript('MindTheGApps');
-                    }
-                });
-            });
-        </script>
+                <div class="processing">
+                    <!--  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p> -->
+                    <p id="info"></p>
+                </div>
+                <br>
+        </div>
+    </div>
+    <script src="assets/js/file_chooser.js"></script>
+    <script src="assets/js/collapsible.js"></script>
         
         <main>
 
@@ -157,21 +140,7 @@
 
 
 
-    <script>
-        window.onscroll = function() {myFunction()};
-        
-        var header = document.getElementById("mainheaderbox");
-        var sticky = header.offsetTop;
-        
-        function myFunction() {
-          if (window.pageYOffset > sticky) {
-            header.classList.add("sticky");
-          } else {
-            header.classList.remove("sticky");
-          }
-        }
-        </script>
-        <script src="../coll.js"></script>
+
         </main>
         </body>
         </html>
