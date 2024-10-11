@@ -22,10 +22,52 @@
             <p class="two">Maker</p>
             </div>
             </div>
+            
             <div class="form">
               <br>
+            <button class="collapsible"><span>What is MagiskGapps Maker</span></button>
+              <div class="content">
+                  <p class="sub">
+                    MagiskGApps maker is a online program that converts regular GApps packages into Magisk flashable GApps packages.
+                  </p>
+           </div>
+            <button class="collapsible"><span>How to use MagiskGapps maker?</span></button>
+                <div class="content">
+                    <p class="sub">
+                        <ol>
+                            <li>Download desired GApps package from the sources below</li>
+                            <li>Upload and select GApps type from the menu</li>
+                            <li>Generate the new Magisk flashable GApps file</li>
+                            <li>The file can take more than 5 minutes to generate. Please refer to the console for progress. When generating, please do not leave the page. </li>
+                            <li>Once generated, flash the module in Magisk.</li>
+                        </ol>
+                        <ul>
+                            <li><b>Please note: </b> I cannot test every GApps package for every android version, so if you run into any issues, please open an issue on <a class="link" href="https://github.com/wacko1805/magiskgapps.com/issues">Github.</a>
+                            </li>
+                        </ul>
+                    </p>
+            </div>
+            <button class="collapsible"><span>How does it work?</span></button>
+                <div class="content">
+                    <p class="sub">
+                        MagiskGApps maker works by a simple JavaScript program. It extracts the GApps package, and moves the required files into a Magisk Module. Each GApps type is different, meaning a new script is required for each type. The script generates a custom module.prop file, meaning that the name of the original GApps file is represented in the Magisk app. 
+                    </p>
+            </div>
+
+            <button class="collapsible"><span>Download GApps packages</span></button>
+            <div class="content">
+                <p class="sub">
+                    Supported GApps packages listed below.
+                    <br><br>
+                    <a href="https://nikgapps.com/"><button>NikGApps</button></a>
+                    <a href="https://mindthegapps.com/"><button>MindTheGApps</button></a>
+                    <br><br>
+                    I cannot test every GApps package for every android version, so if you run into any issues, please open an issue on <a class="link" href="https://github.com/wacko1805/magiskgapps.com/issues">Github.</a>
+                </p>
+        </div>
+            <hr>
               <p>Select your GApps file</p>
-              <input type="file" id="zipFileInput" accept=".zip">
+              <input type="file" id="zipFileInput" accept=".zip" (change)="getFile($event)">
               <p>Choose your GApps type</p>
           <div class='inputGroup'>
               <input id='NikGapps' type='radio' name='GappsType' value='NikGapps'>
@@ -40,11 +82,12 @@
           <button id="extractButton" class="full-width">Generate MagiskGApps package</button>
       
           <p>Console:</p>
+
           <div class="processing">
               <p id="info"></p>
-              
           </div>
-            </div>
+          <br>
+        </div>
         </div>
         
         </div>
@@ -61,6 +104,7 @@
                 elem.addEventListener("change", function () {
                     if (this.value === 'NikGapps') {
                         loadScript('NikGApps');
+
                     } else if (this.value === 'MindTheGApps') {
                         loadScript('MindTheGApps');
                     }
@@ -122,6 +166,7 @@
           }
         }
         </script>
+        <script src="../coll.js"></script>
         </main>
         </body>
         </html>

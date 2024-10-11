@@ -36,7 +36,18 @@ body {
   margin: 0;
   padding: 0;
 }
-
+.link {
+  color: var(--rose-red);
+  text-decoration: none;
+  padding: 3px;
+  margin: -3px;
+  border-radius: 5px;
+  transition: 0.1s;
+}
+.link:hover {
+  color: white;
+  background-color: var(--lavender-blush);
+}
 html {
   scroll-behavior: smooth;
 }
@@ -231,28 +242,29 @@ header h1 {
   }
 
   .sub {
-    font-size: 20px;
   }
 
 
   .collapsible {
     cursor: pointer;
-    background-color: #47425D;
-    font-size: 20px;
-    font-weight: 600;
+    background-color: #dfdfdf;
+    font-size: 17px;
+    font-weight: 400;
     padding-left: 30px;
-    padding: 20px;
+    padding: 10px;
     border-radius: 5px;
-    color: white;
+    color: var(--onyx);
     width: 100%;
     border: none;
     text-align: left;
     outline: none;
     transition: 0.2s;
+    margin-bottom: 3px;
   }
   
   .active, .collapsible:hover {
-    background-color: #726a95;
+    background-color: var(--lavender-blush);
+    color: var(--onyx);
   }
   
   .collapsible:after {
@@ -272,8 +284,9 @@ header h1 {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-    background-color: #f1f1f1;
-    border-radius: 0 0 5px 5px;
+    background-color: #dfdfdf;
+    border-radius: 5px;
+    margin-bottom: 5px;
   }
 
   h1 {
@@ -385,8 +398,8 @@ input::file-selector-button {
   transition: 0.2s;
 }
 input::file-selector-button:hover {
-  background-color: var(--tropical-indigo);
-  color: var(--lavender-blush);
+  background-color: var(--lavender-blush);
+  color: white;
 }
 button {
   font-weight: bold;
@@ -400,8 +413,8 @@ button {
   transition: 0.2s;
 }
 button:hover {
-  background-color: var(--tropical-indigo);
-  color: var(--lavender-blush);
+  background-color: var(--lavender-blush);
+  color: white;
 }
 .processing {
   margin-top: 2vh;
@@ -412,6 +425,7 @@ button:hover {
   overflow: auto;
   overflow-y: hidden;
   overflow-x:scroll;
+  margin-bottom: 5px;
 }
 .processing p {
   font-family: "JetBrains Mono", monospace;
@@ -595,7 +609,6 @@ button:hover {
   /* end header */
 
   .header-box{
-    height: 96vh;
     background-color: #EEF0E5;
     transition: .3s ease-in-out;
     padding-left: 5vw;
