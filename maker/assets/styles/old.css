@@ -1,0 +1,52 @@
+/* Main Box */
+.main-box {
+    background-color: #47425D;
+    border-radius: 5px;
+    padding: 20px;
+    width: 100%;
+    display: inline-block;
+  }
+  
+  .main-box h2 {
+    color: white;
+    padding-left: 15px;
+  }
+  
+  /* Columns */
+  .column {
+    float: left;
+    width: 23.7%;
+    margin: 0.6%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    transition: box-shadow 0.2s;
+  }
+  
+  .column:hover {
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  .main-box a:hover {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .column img {
+    width: 50%;
+    padding-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .column h3 {
+    text-align: center;
+    color: var(--onyx);
+  }
+  
+  /* Responsive Columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 48.8%;
+    }
+  }

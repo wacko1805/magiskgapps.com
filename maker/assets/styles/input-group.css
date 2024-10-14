@@ -1,0 +1,122 @@
+.inputGroup {
+    background-color: #dfdfdf;
+    display: block;
+    margin: 10px 0;
+    position: relative;
+    border-radius: 5px;
+    transition: 0.2s;
+  }
+  
+  .inputGroup:hover {
+    background-color: var(--lavender-blush);
+    color: var(--lavender-blush);
+  }
+  
+  .inputGroup label {
+    padding: 12px 30px;
+    width: 100%;
+    display: block;
+    text-align: left;
+    color: #3c454c;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 200ms ease-in;
+    overflow: hidden;
+  }
+  
+  .inputGroup label:after {
+    width: 32px;
+    height: 32px;
+    content: '';
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: 4px 4.5px;
+    border-radius: 5px;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: all 200ms ease-in;
+  }
+  
+  .inputGroup input:checked ~ label {
+    color: #fff;
+    background-color: var(--celadon);
+    border-radius: 5px;
+  }
+  
+  .inputGroup input:checked ~ label:before {
+    transform: translate(-50%, -50%) scale3d(56, 56, 1);
+    opacity: 1;
+  }
+  
+  .inputGroup input:checked ~ label:after {
+    background-color: var(--celadon);
+    border-color: var(--celadon);
+  }
+  
+  .inputGroup input {
+    width: 32px;
+    height: 32px;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    visibility: hidden;
+  }
+  
+  /* Button and input styles */
+  input[type=button], input[type=submit], input[type=reset] {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  
+  input::file-selector-button {
+    background-color: var(--celadon);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 30px;
+    color: white;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    transition: 0.2s;
+  }
+  
+  input::file-selector-button:hover {
+    background-color: var(--lavender-blush);
+    color: white;
+  }
+  
+  button {
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 30px;
+    color: white;
+    background-color: var(--celadon);
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  button:hover {
+    background-color: var(--lavender-blush);
+    color: white;
+  }
+  
