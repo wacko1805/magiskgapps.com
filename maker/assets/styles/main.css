@@ -55,19 +55,12 @@ main {
   padding-left: 15vw;
   padding-right: 15vw;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 850px) {
   main {
-padding-left: 0;
-padding-right: 0;
+padding-left: 2vw;
+padding-right: 2vw;
 }}
 
-
-@media screen and (max-width: 600px) {
-main {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-}
 h3 {
     color: var(--onyx);
 }
@@ -221,27 +214,6 @@ header h1 {
     color: var(--onyx);
     font-weight: 500;
     padding: 10px;
-  }
-
-  footer {
-    background-color: var(--celadon);
-    border-radius: 5px 5px 0 0;
-    padding: 10px;
-    margin: 0;
-  }
-
-  footer  p {
-    text-align: center;
-    color: white;
-  }
-  table,tbody, th, td {
-    border: 1px solid black;
-    border-radius: 5px;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  .sub {
   }
 
 
@@ -441,195 +413,27 @@ button:hover {
 }
 
 
-.header {
-  background-color: #fff;
-  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
-  position: fixed;
-  width: 100%;
-  z-index: 3;
-  top: 0;
-  }
-  
-  .header ul {
-  margin: 0;
-  margin-top: 2%;
-  padding: 20px;
-  list-style: none;
-  overflow: hidden;
-  background-color: #fff;
-  top: 50%;
-  }
-  
-  
-  .header li a {
-  display: block;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: 0.2s ease-out;
-  padding: 12px 30px;
-  margin-left: 15px;
-  color: var(--celadon);
-  border: 2px solid var(--celadon);
-  border-radius: 5px;
-  
-  }
-  
-  @media only screen and (max-width: 1000px) {
-    .header ul {
-      
-      padding: 0px;
-      
-      }
-  
-      .header li a {
-        
-        margin-left: auto;
-        margin: 10px;
-        
-        
-        }
-    }
-  
-  .header li a:hover,
-  .header .menu-btn:hover {
-  background-color: var(--celadon);
-  color: white;
-  }
-  .header li a:active,
-  .header .menu-btn:active { 
-    border-radius: 15px;
-  }
-  
-  .header .logo {
-    font-family: 'Tilt Warp', cursive;
-  color: #555555;
-  display: block;
-  float: left;
-  font-size: 1.6em;
-  padding: 24px 40px;
-  text-decoration: none;
-  }
-  
-  /* menu */
-  
-  .header .menu {
-  clear: both;
-  max-height: 0;
-  transition: max-height .2s ease-out;
-  }
-  
-  /* menu icon */
-  
-  .header .menu-icon {
-  cursor: pointer;
-  display: inline-block;
-  padding: 28px 20px;
-  position: relative;
-  user-select: none;
-  float: right;
-  }
-  
-  
-  .header .menu-icon .navicon {
-  background: #333;
-  display: block;
-  height: 2px;
-  position: relative;
-  transition: background .2s ease-out;
-  width: 18px;
-  }
-  
-  .header .menu-icon .navicon:before,
-  .header .menu-icon .navicon:after {
-  background: #333;
-  content: '';
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all .2s ease-out;
-  width: 100%;
-  }
-  
-  .header .menu-icon .navicon:before {
-  top: 5px;
-  }
-  
-  .header .menu-icon .navicon:after {
-  top: -5px;
-  }
-  
-  /* menu btn */
-  
-  .header .menu-btn {
-  display: none;
-  }
-  
-  .header .menu-btn:checked ~ .menu {
-  max-height: 500px;
-  }
-  
-  .header .menu-btn:checked ~ .menu-icon .navicon {
-  background: transparent;
-  }
-  
-  .header .menu-btn:checked ~ .menu-icon .navicon:before {
-  transform: rotate(-45deg);
-  }
-  
-  .header .menu-btn:checked ~ .menu-icon .navicon:after {
-  transform: rotate(45deg);
-  }
-  
-  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-  top: 0;
-  }
-  
-  /* 48em = 768px */
-  
-  @media (min-width: 1000px) {
-     
-  .header li {
-  float: left;
-  }
-  .header li a {
-  padding: 9px 30px;
-  }
-  .header .menu {
-  clear: none;
-  float: right;
-  max-height: none;
-  }
-  .header .menu-icon {
-  display: none;
-  }
-  
-  
-  
-  }
-  
-  
-  /* end header */
-
   .header-box{
     background-color: #EEF0E5;
     transition: .3s ease-in-out;
-    padding-left: 5vw;
-    padding-right: 5vw;
-    padding-top: 2vh;
-    margin-left: 3vw;
-    margin-right: 3vw;
+    padding: 2vw;
+    /* margin-left: 3vw;
+    margin-right: 3vw; */
     border-radius: 5px;
     margin-top: 2vh;
   }
+  /* @media screen and (min-width: 800px) {
 
-  .sticky {
+  .header-box{
+    margin-left: 20vw;
+    margin-right: 20vw;
   }
-
+} */
 
   .heading-text {
-    padding-left: 30px;
-    display: inline-block;
+    position: relative; /* Make it the reference for absolutely positioned children */
+    padding-left: 10px;
+    transition: 0.2s;
     /* padding-bottom: 1vh; */
   }
 
@@ -661,6 +465,39 @@ button:hover {
     position: absolute;
   }
 
+  .heading-text i {
+    color: var(--onyx);
+    font-size: 25px;
+  }
+  .heading-text .icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    text-align: center;
+  }
+
+  .heading-text p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Tilt Warp', cursive;
+    font-weight: 100;
+    color: white;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-top: 2px;
+  }
+
+  #hover-icon:hover {
+    cursor: pointer;
+  }
+  #hover-icon:hover  #hover-text  {
+    background-color: var(--celadon);
+    border-radius: 5px;
+    transition: 0.2s;
+  }
+
   .maker {
     position: relative;
   }
@@ -675,4 +512,8 @@ button:hover {
   }
   .notif {
     color: white;
+  }
+
+  footer {
+    margin: 20px;
   }
