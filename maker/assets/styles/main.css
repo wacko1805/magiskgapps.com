@@ -1,7 +1,7 @@
 /* Font Imports */
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Tilt+Warp&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url(../fonts/jetbrains.css);
+@import url(../fonts/montserrat.css);
+@import url(../fonts/poppins-tilt-warp.css);
 /* Larger components */
 @import url(headers.css);
 @import url(input-group.css);
