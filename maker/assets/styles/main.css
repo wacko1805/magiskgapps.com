@@ -189,7 +189,18 @@ footer .info {
   text-align: center;
   margin: 0;
 }
+/* Main Section Styles */
+footer img {
+  padding-left: 15vw;
+  padding-right: 15vw;
+}
 
+@media screen and (max-width: 650px) {
+  footer img  {
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+}
 /* Message box: */
 
 .message-box {
