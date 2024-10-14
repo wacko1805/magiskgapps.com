@@ -674,5 +674,6 @@ button:hover {
     color: var(--rose-red);
   }
   .notif {
-    color: white;
+    color: var(--rose-red);
   }
+
