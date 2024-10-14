@@ -168,14 +168,26 @@ h2, h3 {
 .content-box {
   background-color: #EEF0E5;
   transition: 0.3s ease-in-out;
-  padding: 2vw;
+  padding: 3vw;
   border-radius: 5px;
   margin-top: 2vh;
 }
 
 /* Footer */
 footer {
-  margin: 20px;
+  margin-top: 25px;
+  background-color: #EEF0E5;
+  padding: 5vh;
+}
+
+footer .copywrite {
+  text-align: center;
+  margin: 0;
+}
+
+footer .info {
+  text-align: center;
+  margin: 0;
 }
 
 /* Message box: */
