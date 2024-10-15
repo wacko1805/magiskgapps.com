@@ -8,8 +8,9 @@ MagiskGApps maker is an online tool to generate MagiskGApps packages from regula
 - MindTheGApps
 - Please recommend other GApps packages using the suggestion label in the issues tab, or https://github.com/wacko1805/magiskgapps.com/labels/GApps%20Suggestion
 # To Do:
-- [ ] Add support for more GApps types. (please reccomend other popular options!)
 - [x] Create a custom module.prop and install files using the original file names
+- [ ] Add support for KernalSU and APatch
+- [ ] Add support for more GApps types. (please reccomend other popular options!)
 - [ ] potentially create an app to flash directly
 ## Known Issues:
 - [ ] Will process zip through both NikGApps and MindTheGApps files if one radio button is selected, and then the other, causeing timeout error
