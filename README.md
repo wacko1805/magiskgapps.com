@@ -18,4 +18,4 @@ MagiskGApps maker is an online tool to generate MagiskGApps packages from regula
 
 ## Support me:
 MagiskGApps homepage is ad free. I plan to keep it this way, although, I may plan on showing one car style ad in the console while it is generating the file. 
-There is the (Support page)[https://magiskgapps.com/support.html] page on the MagiskGApps page. This is the only page with ads, and it is a way to directly financally support me, while being free for you. I do understand that these types of ads are annoying, but that is why there is the choice of you to visit this page, rather than being bombarded by ads on the homepage.
+There is the [Support page](https://magiskgapps.com/support.html) page on the MagiskGApps page. This is the only page with ads, and it is a way to directly financally support me, while being free for you. I do understand that these types of ads are annoying, but that is why there is the choice of you to visit this page, rather than being bombarded by ads on the homepage.
