@@ -1,0 +1,27 @@
+{
+  "message": "Put Default Colours here:",
+  "colors": {
+    "primary": "#C3CD72",
+    "onPrimary": "#2E3400",
+    "primaryContainer": "#434B00",
+    "onPrimaryContainer": "#DFEA8B",
+    "secondary": "#DFBBDE",
+    "onSecondary": "#402843",
+    "secondaryContainer": "#DFBBDE",
+    "onSecondaryContainer": "#402843",
+    "tertiary": "#A5CAF5",
+    "onTertiary": "#023256",
+    "error": "#c33c54ff",
+    "onError": "#601410",
+    "background": "#fff",
+    "onBackground": "#393e46ff",
+    "surface": "#0F141A",
+    "onSurface": "#DFE3EB",
+    "surfaceVariant": "#3F4753",
+    "onSurfaceVariant": "#BFC7D5",
+    "outline": "#89919E",
+    "inverseOnSurface": "#171C22",
+    "inverseSurface": "#F8F9FF",
+    "surfaceTint": "#C3CD72"
+  }
+}

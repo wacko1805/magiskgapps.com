@@ -2,6 +2,7 @@
 @import url(../fonts/jetbrains.css);
 @import url(../fonts/montserrat.css);
 @import url(../fonts/poppins-tilt-warp.css);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* Larger components */
 @import url(headers.css);
 @import url(input-group.css);
@@ -23,7 +24,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: white;
+  background: var(--background);
   border-radius: 15px;
 }
 
@@ -42,10 +43,11 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: poppins;
   font-size: 16px;
   margin: 0;
   padding: 0;
+  background-color: var(--background);
 }
 
 html {
@@ -54,7 +56,7 @@ html {
 
 /* Link Styles */
 a {
-  color: var(--rose-red);
+  color: var(--error);
   text-decoration: none;
   padding: 3px;
   margin: -3px;
@@ -63,10 +65,12 @@ a {
 }
 
 a:hover {
-  color: white;
-  background-color: var(--lavender-blush);
+  color: var(--background);
+  background-color: var(--secondary);
 }
-
+p {
+  color: var(--onBackground);
+}
 /* Main Section Styles */
 main {
   padding-left: 15vw;
@@ -83,12 +87,13 @@ main {
 /* Headings */
 h1 {
   font-family: 'Tilt Warp', cursive;
-  color: var(--onyx);
+  color: var(--primary);
   font-size: calc(2rem + 1.5vw);
+  padding-left: 15px;
 }
 
 h2, h3 {
-  color: var(--onyx);
+  color: var(--onBackground);
 }
 
 
@@ -96,12 +101,12 @@ h2, h3 {
 /* Collapsible Content */
 .collapsible {
   cursor: pointer;
-  background-color: #dfdfdf;
+  background-color: var(--primary);
   font-size: 17px;
-  font-weight: 400;
-  padding: 10px 30px;
-  border-radius: 5px;
-  color: var(--onyx);
+  font-family: poppins;
+  font-weight: 600;
+  border-radius: 25px;
+  color: var(--onPrimary);
   width: 100%;
   border: none;
   text-align: left;
@@ -111,16 +116,17 @@ h2, h3 {
 }
 
 .collapsible:hover, .active {
-  background-color: var(--lavender-blush);
-  color: var(--onyx);
+  background-color: var(--secondary);
+  color: var(--onSecondary);
 }
 
 .collapsible:after {
   content: '\002B';
-  color: white;
+  color: var(--onPrimary);
   font-weight: bold;
   float: right;
   margin-left: 5px;
+  transition: 0.2s;
 }
 
 .active:after {
@@ -132,19 +138,22 @@ h2, h3 {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-  background-color: #dfdfdf;
-  border-radius: 5px;
+  background-color: var(--secondaryContainer);
+  color: var(--onSecondaryContainer);
+  border-radius: 25px;
+  margin-right: 5px;
   margin-bottom: 5px;
 }
 
 /* Processing Box */
 .console {
   position: relative;
-  background-color: #D9D9D9;
-  border-radius: 3px;
+  background-color: var(--primaryContainer);
+  border-radius: 15px;
   height: 23vh;
   margin-bottom: 5px;
   overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column-reverse;
 }
@@ -152,21 +161,21 @@ h2, h3 {
 .console p {
   font-family: "JetBrains Mono", monospace;
   font-size: 12px;
-  color: #3c454c;
+  color: var(--onPrimaryContainer);
   position: relative;
   bottom: -10px;
   left: 5px;
 }
 
 .console .red {
-  color: var(--rose-red);
+  color: var(--error);
 }
 .red {
-    color: var(--rose-red);
+    color: var(--error);
 }
 /* content Box */
 .content-box {
-  background-color: #EEF0E5;
+  font-family: poppins;
   transition: 0.3s ease-in-out;
   padding: 3vw;
   border-radius: 5px;
@@ -176,16 +185,20 @@ h2, h3 {
 /* Footer */
 footer {
   margin-top: 25px;
-  background-color: #EEF0E5;
+  background-color: var(--secondaryContainer);
   padding: 5vh;
 }
 
+
+
 footer .copywrite {
   text-align: center;
+  color: var(--onSecondaryContainer);
   margin: 0;
 }
 
 footer .info {
+  color: var(--onSecondaryContainer);
   text-align: center;
   margin: 0;
 }
@@ -204,33 +217,33 @@ footer img {
 /* Message box: */
 
 .message-box {
-    background-color: var(--lavender-blush);
+    background-color: var(--secondary);
     border-radius: 20px;
     margin-bottom: 5px;
     padding: 15px;
   }
   .message-box h2 {
-    color: var(--rose-red);
+    color: var(--error);
     padding: 0;
     margin: 0;
   }
 
   .message-box p {
-    color: var(--onyx);
+    color: var(--onBackground);
     font-size: 20px;
   }
 
   .message-box button {
     width: 100%;
-    border: 2px solid var(--rose-red);
-    color: var(--rose-red);
-    background-color: var(--lavender-blush);
+    border: 2px solid var(--error);
+    color: var(--error);
+    background-color: var(--secondary);
     border-radius: 15px;
   }
 
   .message-box button:hover {
-    background-color: var(--rose-red);
-    color: white;
+    background-color: var(--error);
+    color: var(--background);
   }
 
   .message-box .double-button {

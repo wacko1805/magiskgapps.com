@@ -7,10 +7,11 @@ header {
   header h1 {
     margin-bottom: 0;
     padding-left: 0;
+    color: var(--onBackground);
   }
   
   header h1 span {
-    color: var(--celadon);
+    color: var(--secondary);
   }
   
   header .maker {
@@ -22,7 +23,7 @@ header {
     font-size: 30px;
     font-weight: 800;
     padding-left: 20.5px;
-    color: #EEF0E5;
+    color: var(--background);
     position: absolute;
   }
   
@@ -31,12 +32,12 @@ header {
     font-size: 30px;
     font-weight: 800;
     padding-left: 20px;
-    color: var(--onyx);
+    color: var(--onBackground);
     position: absolute;
   }
   
   header i {
-    color: var(--onyx);
+    color: var(--primary);
     font-size: 25px;
   }
   
@@ -57,7 +58,7 @@ header {
     padding: 1px 2px;
     font-family: 'Tilt Warp', cursive;
     font-weight: 100;
-    color: white;
+    color: var(--background);
     margin-top: 2px;
   }
   
@@ -66,7 +67,8 @@ header {
   }
   
   #hover-icon:hover #hover-text {
-    background-color: var(--celadon);
+    background-color: var(--primary);
+    color: var(--onPrimary);
     border-radius: 5px;
     transition: 0.2s;
   }
