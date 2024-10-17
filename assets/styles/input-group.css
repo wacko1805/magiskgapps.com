@@ -107,6 +107,24 @@
     background-color: var(--secondaryContainer);
     color: var(--onSecondaryContainer);
   }
+  .file-desc {
+    padding: 12px 30px;
+    font-size: 15px;
+    font-family: poppins;
+    font-weight: 600;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--primaryContainer);
+    color: var(--onPrimaryContainer);    
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    transition: 0.2s;
+  }
+  
+  #file{
+    margin-left: 5px;
+    font-family: "Montserrat", sans-serif;
+  }
   
   button {
     padding: 12px 30px;
