@@ -123,6 +123,7 @@
   
   #file{
     margin-left: 5px;
+    color: var(--onBackground);
     font-family: "Montserrat", sans-serif;
   }
   
