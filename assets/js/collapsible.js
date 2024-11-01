@@ -7,8 +7,18 @@ for (i = 0; i < coll.length; i++) {
     var content = this.nextElementSibling;
     if (content.style.maxHeight){
       content.style.maxHeight = null;
+      this.classList.remove("open");
+      this.classList.add("closed");
+
+      content.classList.remove("c-open");
+      content.classList.add("c-closed");
     } else {
       content.style.maxHeight = content.scrollHeight + "px";
+      this.classList.remove("closed");
+      this.classList.add("open");
+
+      content.classList.remove("c-closed");
+      content.classList.add("c-open");
     } 
   });
 }

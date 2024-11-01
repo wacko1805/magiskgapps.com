@@ -38,6 +38,31 @@
   background: var(--primary);
 }
 
+
+/* Scrollbar Styles */
+.console::-webkit-scrollbar {
+  width: 20px;
+
+}
+
+.console::-webkit-scrollbar-track {
+  background: var(--onSecondary);
+    background-clip: content-box;
+    border: 7px solid transparent;
+}
+
+.console::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+    background-clip: content-box;
+    border: 7px solid transparent;
+}
+
+.console::-webkit-scrollbar-thumb:hover {
+  background: var(--tertiary);
+  background-clip: content-box;
+  border: 7px solid transparent;
+}
+
 /* Global Styles */
 * {
   box-sizing: border-box;
@@ -108,7 +133,7 @@ h2, h3 {
   background-color: var(--primary);
   font-size: 17px;
   font-family: poppins;
-  font-weight: 600;
+  font-weight: var(--font-weight-coll);
   border-radius: var(--radius-big);
   color: var(--onPrimary);
   width: 100%;
@@ -124,10 +149,20 @@ h2, h3 {
   color: var(--onSecondary);
 }
 
+.open {
+  border-radius: var(--radius-big) var(--radius-big) var(--radius-sml) var(--radius-sml);
+}
+
+.closed {
+  border-radius: var(--radius-big);
+}
+
+
+
 .collapsible:after {
   content: '\002B';
   color: var(--onPrimary);
-  font-weight: bold;
+  font-weight: var(--font-weight-coll-content);
   float: right;
   margin-left: 5px;
   transition: 0.2s;
@@ -139,16 +174,26 @@ h2, h3 {
 
 .content {
   padding: 0 18px;
+  transition: 0.2s;
   max-height: 0;
   overflow: hidden;
+  border-radius: var(--radius-big);
   transition: max-height 0.2s ease-out;
   background-color: var(--secondaryContainer);
   color: var(--onSecondaryContainer);
-  border-radius: var(--radius-big);
-  margin-right: 5px;
   margin-bottom: 5px;
 }
 
+.c-open {
+  border-radius: var(--radius-sml) var(--radius-sml) var(--radius-big) var(--radius-big);
+}
+
+.c-closed {
+  border-radius: var(--radius-big);
+}
+.content p {
+  font-weight: var(--font-weight-coll-content);
+}
 /* Processing Box */
 .console {
   position: relative;

@@ -16,7 +16,7 @@
     padding: 12px 30px;
     font-size: 17px;
     font-family: poppins;
-    font-weight: 600;
+    font-weight: var(--font-weight-coll);
     width: 100%;
     display: block;
     text-align: left;
@@ -93,7 +93,7 @@
     padding: 12px 30px;
     font-size: 15px;
     font-family: poppins;
-    font-weight: 600;
+    font-weight: var(--font-weight-coll);
     border: none;
     border-radius: var(--radius-big);
     background-color: var(--primaryContainer);
@@ -134,7 +134,7 @@
     padding: 12px 30px;
     font-size: 15px;
     font-family: poppins;
-    font-weight: 600;
+    font-weight: var(--font-weight-coll);
     border: none;
     border-radius: var(--radius-big);
     padding: 12px 30px;
