@@ -69,7 +69,7 @@ header {
   #hover-icon:hover #hover-text {
     background-color: var(--primary);
     color: var(--onPrimary);
-    border-radius: 5px;
+    border-radius: var(--radius-sml);
     transition: 0.2s;
   }
   
