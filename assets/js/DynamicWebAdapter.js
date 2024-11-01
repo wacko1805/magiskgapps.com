@@ -1,5 +1,5 @@
 const jsonUrl = 'http://localhost:8192/';
-const localFilePath = '/colours.json';
+const localFilePath = 'colours.json';
 
 async function fetchColorsAndSetVariables(url, localFile) {
     const setCSSVariables = (colors) => {
@@ -16,7 +16,7 @@ async function fetchColorsAndSetVariables(url, localFile) {
                 throw new Error('Network response was not ok');
             }
             const json = await response.json();
-            return json.schemes; // Return the schemes object
+            return json.colors; // Return the colors object directly
         } catch (error) {
             console.error('Failed to fetch from URL:', error);
             return null;
@@ -30,7 +30,7 @@ async function fetchColorsAndSetVariables(url, localFile) {
                 throw new Error('Failed to load local file');
             }
             const json = await response.json();
-            return json.schemes; // Return the schemes object
+            return json.schemes; // Return the schemes object for dark/light mode
         } catch (error) {
             console.error('Failed to load local file:', error);
             return null;
@@ -43,28 +43,25 @@ async function fetchColorsAndSetVariables(url, localFile) {
     };
 
     const checkUrlAndUpdateColors = async () => {
-        let schemes = await fetchData(url);
-        if (schemes) {
-            const colors = getColorsForScheme(schemes);
+        let colors = await fetchData(url);
+        if (colors) {
             setCSSVariables(colors);
             console.log('Colors updated from URL:', colors);
         } else {
-            console.log('Failed to update from URL, retrying in 5 seconds...');
+            console.log('Failed to update from URL, trying local file...');
+            const localSchemes = await loadLocalFile(localFile);
+            if (localSchemes) {
+                const colors = getColorsForScheme(localSchemes);
+                setCSSVariables(colors);
+                console.log('Colors loaded from local file:', colors);
+            }
         }
 
         // Retry the URL check every 5 seconds
         setTimeout(checkUrlAndUpdateColors, 5000); 
     };
 
-    // Load from the local file first
-    const localSchemes = await loadLocalFile(localFile);
-    if (localSchemes) {
-        const colors = getColorsForScheme(localSchemes);
-        setCSSVariables(colors);
-        console.log('Colors loaded from local file:', colors);
-    }
-
-    // Start checking the URL afterward
+    // Initial check from the URL
     checkUrlAndUpdateColors();
 }
 
