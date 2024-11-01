@@ -55,7 +55,7 @@ html {
 }
 
 /* Link Styles */
-a {
+.link {
   color: var(--error);
   text-decoration: none;
   padding: 3px;
@@ -64,7 +64,7 @@ a {
   transition: 0.1s;
 }
 
-a:hover {
+.link:hover {
   color: var(--background);
   background-color: var(--secondary);
 }

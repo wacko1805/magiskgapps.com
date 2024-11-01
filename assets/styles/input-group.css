@@ -140,9 +140,19 @@
     cursor: pointer;
     transition: 0.2s;
   }
+
+  .onSecondary {
+    background-color: var(--onSecondaryContainer);
+    color: var(--onSecondary);
+  }
   
   button:hover {
     background-color: var(--secondaryContainer);
     color: var(--onSecondaryContainer);
+  }
+
+  .onSecondary:hover {
+    background-color: var(--primary);
+    color: var(--onPrimary);
   }
   
