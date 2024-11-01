@@ -98,7 +98,7 @@ Object.values(templateFolder).forEach(fileName => {
                     window.URL.revokeObjectURL(url);
                     document.body.removeChild(a);
                     console.log('Download complete.');
-                    document.getElementById("info").innerHTML += 'Zip file made. File should download shortly!<br><h3 class="red">Want to support me for free? just visit the support page!</h3><a href="support.html"><button>Support me here</button></a>';
+                    document.getElementById("info").innerHTML += 'Zip file made. File should download shortly!<br></a>';
                 });
             });
         });

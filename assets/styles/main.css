@@ -55,6 +55,9 @@ html {
   scroll-behavior: smooth;
 }
 
+hr {
+ border: 1px solid var(--primary);
+}
 /* Link Styles */
 .link {
   color: var(--error);
