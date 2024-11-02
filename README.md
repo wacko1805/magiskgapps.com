@@ -1,1 +1,1 @@
-# Please go to (https://github.com/wacko1805/MagiskGapps)[MagiskGApps Repo] For more info
+# Please go to [MagiskGApps main repo]([MagiskGApps Repo](https://github.com/wacko1805/MagiskGapps)) For more info
