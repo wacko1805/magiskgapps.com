@@ -140,17 +140,18 @@ h2, h3 {
   border: none;
   text-align: left;
   outline: none;
-  transition: 0.2s;
+  transition: 0.1s;
   margin-bottom: 3px;
 }
 
 .collapsible:hover, .active {
-  background-color: var(--secondary);
-  color: var(--onSecondary);
+  background-color: var(--tertiary);
+  color: var(--onTertiary);
 }
 
 .open {
   border-radius: var(--radius-big) var(--radius-big) var(--radius-sml) var(--radius-sml);
+  
 }
 
 .closed {
@@ -174,7 +175,7 @@ h2, h3 {
 
 .content {
   padding: 0 18px;
-  transition: 0.2s;
+  transition: 0.1s ease-in-out;
   max-height: 0;
   overflow: hidden;
   border-radius: var(--radius-big);

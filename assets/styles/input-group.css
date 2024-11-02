@@ -8,8 +8,8 @@
   }
   
   .inputGroup:hover {
-    background-color: var(--secondary);
-    color: var(--onSecondary);
+    background-color: var(--tertiary);
+    color: var(--onTertiary);
   }
   
   .inputGroup label {
@@ -74,16 +74,6 @@
     visibility: hidden;
   }
   
-  /* Button and input styles
-  input[type=button], input[type=submit], input[type=reset] {
-    background-color: #04AA6D;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    margin: 4px 2px;
-    cursor: pointer;
-  } */
-  
   .full-width {
     width: 100%;
   }
@@ -104,8 +94,8 @@
   }
   
   input::file-selector-button:hover {
-    background-color: var(--secondaryContainer);
-    color: var(--onSecondaryContainer);
+    background-color: var(--tertiary);
+    color: var(--onTertiary);
   }
   .file-desc {
     padding: 12px 30px;
@@ -121,8 +111,8 @@
     transition: 0.2s;
   }
   .file-desc:hover {
-    background-color: var(--secondaryContainer);
-    color: var(--onSecondaryContainer);
+    background-color: var(--tertiary);
+    color: var(--onTertiary);
   }
   #file{
     margin-left: 5px;
@@ -150,8 +140,8 @@
   }
   
   button:hover {
-    background-color: var(--secondaryContainer);
-    color: var(--onSecondaryContainer);
+    background-color: var(--tertiary);
+    color: var(--onTertiary);
   }
 
   .onSecondary:hover {
