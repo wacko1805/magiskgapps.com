@@ -104,8 +104,14 @@ p {
 }
 /* Main Section Styles */
 main {
-  padding-left: 15vw;
-  padding-right: 15vw;
+  padding-left: 25vw;
+  padding-right: 25vw;
+}
+@media screen and (max-width: 1350px) {
+  main {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
 }
 
 @media screen and (max-width: 850px) {
